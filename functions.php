@@ -75,6 +75,8 @@ add_action( 'widgets_init', 'balassone_widgets_init' );
  */
 function balassone_scripts() {
 	wp_enqueue_style( 'balassone-style', get_stylesheet_uri() );
+	wp_enqueue_script( 'menu', get_template_directory_uri() . '/js/menu.js' );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'balassone_scripts' );

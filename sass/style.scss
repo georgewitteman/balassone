@@ -10,5 +10,33 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: balassone
 */
 
+/* Variables */
+/* - Colors */
+$color-site-title: black;
+$color-primary-nav: black;
+
+/* - Widths */
+$max-width: 64rem; /* 1024px / 16px */
+
+/* Imports */
 @import "normalize";
 @import "wordpress";
+
+/* Styles */
+body {
+  min-width: 20em; /* 320px / 16px */
+}
+
+/* Header */
+@import "header";
+
+.hero {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  position: relative;
+  text-shadow: 0 0 20px black;
+  font-size: 1.2em;
+}

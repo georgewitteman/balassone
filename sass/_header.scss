@@ -1,0 +1,158 @@
+
+.site-header {
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media (min-width: 45em) { /* 720px / 16px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.site-title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6em;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: $color-site-title;
+    text-decoration: none;
+  }
+
+  @media (min-width: 45em) { /* 720px / 16px */
+    display: block;
+    height: auto;
+  }
+}
+
+.hamburger-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 15px;
+  margin: 0;
+
+  @media (min-width: 45em) { /* 720px / 16px */
+    display: none;
+  }
+
+  .line {
+    background-color: #000;
+    height: 2px;
+    width: 20px;
+    transition: all 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .line:nth-child(1) {
+    margin-bottom: 4px;
+  }
+
+  .line:nth-child(2) {
+    margin-bottom: 4px;
+  }
+}
+
+.navigation-active {
+  .hamburger-icon {
+    .line {
+      width: 20px;
+    }
+
+    .line:nth-child(1) {
+      transform: translateY(295%) rotate(45deg);
+    }
+
+    .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .line:nth-child(3) {
+      transform: translateY(-295%) rotate(-45deg);
+    }
+  }
+}
+
+.primary-nav {
+  display: none;
+  margin-bottom: 1em;
+
+  @media (min-width: 45em) { /* 720px / 16px */
+    display: block;
+    margin: 0;
+  }
+}
+
+.navigation-active .primary-nav {
+  display: block;
+}
+
+.primary-menu {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 30em;
+  margin: 0 auto;
+
+  @media (min-width: 45em) { /* 720px / 16px */
+    max-width: none;
+  }
+
+  .menu-item {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 0 .5em;
+
+    @media (min-width: 24em) { /* 480px / 16px */
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+
+    @media (min-width: 45em) { /* 720px / 16px */
+      flex-basis: auto;
+      padding: 0;
+
+      &:last-child a {
+        padding: 6px 9px;
+        border-radius: 3px;
+        border: 1px solid black;
+        margin-right: 0;
+
+        &:hover {
+          text-decoration: none;
+          color: white;
+          background: black;
+        }
+      }
+    }
+  }
+
+  .menu-item a {
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    font-size: .93em;
+    margin: .3em 0;
+    letter-spacing: .04em;
+    color: $color-primary-nav;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 45em) { /* 720px / 16px */
+      margin: 0 9px;
+      font-size: .87em;
+    }
+  }
+}
