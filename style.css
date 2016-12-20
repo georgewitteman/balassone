@@ -361,16 +361,16 @@ body {
   transform: translateY(-295%) rotate(-45deg); }
 
 .primary-nav {
-  display: none;
-  margin-bottom: 1em; }
+  height: 0;
+  overflow: hidden; }
   @media (min-width: 45em) {
     .primary-nav {
       /* 720px / 16px */
-      display: block;
+      height: auto;
       margin: 0; } }
 
 .navigation-active .primary-nav {
-  display: block; }
+  height: auto; }
 
 .primary-menu {
   list-style-type: none;
@@ -379,11 +379,13 @@ body {
   align-items: center;
   flex-wrap: wrap;
   max-width: 30em;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-bottom: 1em; }
   @media (min-width: 45em) {
     .primary-menu {
       /* 720px / 16px */
-      max-width: none; } }
+      max-width: none;
+      margin: 0 auto; } }
   .primary-menu .menu-item {
     flex-basis: 100%;
     text-align: center;

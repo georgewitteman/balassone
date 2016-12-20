@@ -82,17 +82,17 @@
 }
 
 .primary-nav {
-  display: none;
-  margin-bottom: 1em;
+  height: 0;
+  overflow: hidden;
 
   @media (min-width: 45em) { /* 720px / 16px */
-    display: block;
+    height: auto;
     margin: 0;
   }
 }
 
 .navigation-active .primary-nav {
-  display: block;
+  height: auto;
 }
 
 .primary-menu {
@@ -103,9 +103,11 @@
   flex-wrap: wrap;
   max-width: 30em;
   margin: 0 auto;
+  margin-bottom: 1em;
 
   @media (min-width: 45em) { /* 720px / 16px */
     max-width: none;
+    margin: 0 auto;
   }
 
   .menu-item {
