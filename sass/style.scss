@@ -33,11 +33,27 @@ body {
   font: 1em/1.4 $sans-serif;
 }
 
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main-content {
+  @extend .container;
+}
+
 /* Header */
 @import "header";
 
-/* Front Page Hero */
-@import "hero";
+/* Front Page */
+@import "front-page";
+
+/* Listing Archive */
+@import "archive-listing";
+
+/* Single Listing */
+@import "single-listing";
 
 /* Footer */
 @import "footer";

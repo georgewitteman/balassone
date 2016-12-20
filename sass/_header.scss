@@ -1,15 +1,13 @@
 
 .site-header {
+  @extend .container;
   position: relative;
-  max-width: $max-width;
-  margin: 0 auto;
 
   @media (min-width: 45em) { /* 720px / 16px */
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: 3.5rem;
-    padding: 0 1rem;
   }
 }
 

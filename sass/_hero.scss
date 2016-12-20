@@ -21,9 +21,7 @@
 }
 
 .hero-title, .hero-caption, .hero-links {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 1rem;
+  @extend .container;
 }
 
 .hero-title {
