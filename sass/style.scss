@@ -14,6 +14,7 @@ Text Domain: balassone
 /* - Colors */
 $color-site-title: black;
 $color-primary-nav: black;
+$color-footer-text: #777;
 
 /* - Widths */
 $max-width: 64rem; /* 1024px / 16px */
@@ -37,3 +38,6 @@ body {
 
 /* Front Page Hero */
 @import "hero";
+
+/* Footer */
+@import "footer";

@@ -475,3 +475,11 @@ body {
   .hero-button:hover {
     background-color: white;
     color: black; }
+
+/* Footer */
+.site-footer {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: #777;
+  font-size: .9em; }
