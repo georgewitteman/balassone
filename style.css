@@ -13,6 +13,8 @@ Text Domain: balassone
 /* - Colors */
 /* - Widths */
 /* 1024px / 16px */
+/* - Fonts */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i");
 /* Imports */
 html {
   font-family: sans-serif;
@@ -291,7 +293,8 @@ a img.aligncenter {
 /* Styles */
 body {
   min-width: 20em;
-  /* 320px / 16px */ }
+  /* 320px / 16px */
+  font: 1em/1.4 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* Header */
 .site-header {
@@ -420,12 +423,55 @@ body {
         margin: 0 9px;
         font-size: .87em; } }
 
+/* Front Page Hero */
 .hero {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-size: cover;
-  background-position: center center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background: 50% 50% / cover;
   color: white;
   position: relative;
   text-shadow: 0 0 20px black;
   font-size: 1.2em; }
+  @media (min-width: 28em) {
+    .hero {
+      text-align: center; } }
+  @media (min-width: 40em) {
+    .hero {
+      font-size: 1.4em; } }
+  @media (min-width: 60em) {
+    .hero {
+      font-size: 1.6em; } }
+
+.hero-title, .hero-caption, .hero-links {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem; }
+
+.hero-title {
+  margin-bottom: 1rem;
+  font-size: 2em; }
+
+.hero-caption {
+  font-size: .9em;
+  margin-bottom: 2rem; }
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap; }
+  @media (min-width: 28em) {
+    .hero-links {
+      justify-content: center; } }
+
+.hero-button {
+  text-shadow: none;
+  text-decoration: none;
+  color: white;
+  padding: .5rem 1rem;
+  margin: 0 .75rem .75rem 0;
+  border: 1px solid white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px black;
+  font-size: .8em; }
+  .hero-button:hover {
+    background-color: white;
+    color: black; }
