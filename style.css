@@ -296,7 +296,7 @@ body {
   /* 320px / 16px */
   font: 1em/1.4 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.container, .main-content, .site-header, .hero-title, .hero-caption, .hero-links, .front-recent-posts, .front-recent-listings, .site-footer {
+.container, .main-content, .site-header, .hero-title, .hero-caption, .hero-links, .front-recent-posts, .front-recent-listings, .page-content, .page-footer, .site-footer {
   max-width: 64rem;
   margin: 0 auto;
   padding: 0 1rem; }
@@ -921,6 +921,29 @@ body {
     width: 49%; }
   .wplistings-single-listing .ui-tabs .ui-tabs-nav li.ui-tabs-active {
     margin-top: 0; } }
+
+/* Page */
+.page-main-content {
+  max-width: none;
+  padding: 0; }
+
+.page-header {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: 50% 50% / cover;
+  color: white;
+  position: relative;
+  text-shadow: 0 0 20px black;
+  font-size: 1.2em; }
+  @media (min-width: 28em) {
+    .page-header {
+      text-align: center; } }
+  @media (min-width: 40em) {
+    .page-header {
+      font-size: 1.4em; } }
+  @media (min-width: 60em) {
+    .page-header {
+      font-size: 1.6em; } }
 
 /* Footer */
 .site-footer {

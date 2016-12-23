@@ -1,0 +1,30 @@
+.page-main-content {
+  max-width: none;
+  padding: 0;
+}
+
+.page-header {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: 50% 50% / cover;
+  color: white;
+  position: relative;
+  text-shadow: 0 0 20px black;
+  font-size: 1.2em;
+
+  @media (min-width: 28em) {
+    text-align: center;
+  }
+
+  @media (min-width: 40em) {
+    font-size: 1.4em;
+  }
+
+  @media (min-width: 60em) {
+    font-size: 1.6em;
+  }
+}
+
+.page-content, .page-footer {
+  @extend .container;
+}

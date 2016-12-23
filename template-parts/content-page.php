@@ -1,20 +1,17 @@
 <?php
 /**
  * Template part for displaying page content in page.php.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Balassone
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<?php $thumbnail_url = get_template_directory_uri() . '/images/default-hero-optimized.jpg'; ?>
+	<header class="page-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(<?php echo $thumbnail_url; ?>)">
+		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+	</header>
 
-	<div class="entry-content">
+	<div class="page-content">
 		<?php
 			the_content();
 
@@ -26,7 +23,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+		<footer class="page-footer">
 			<?php
 				edit_post_link(
 					sprintf(

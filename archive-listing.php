@@ -71,8 +71,8 @@ get_header(); ?>
 
 
 			<div class="archive-row">
-			<?php archive_listing_loop(); ?>
-		 </div>
+				<?php archive_listing_loop(); ?>
+		 	</div>
 
 		 <?php wp_listings_paging_nav(); ?>
 		 <?php
