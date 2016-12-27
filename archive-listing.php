@@ -52,11 +52,11 @@ function archive_listing_loop() {
 
 get_header(); ?>
 
-<main class="main-content">
+<main>
 
 			<?php if ( have_posts() ) : ?>
 
-				<header class="archive-header">
+				<header class="page-header archive-header">
 					<?php
 					$object = get_queried_object();
 
@@ -68,12 +68,12 @@ get_header(); ?>
 
 					echo $title; ?>
 				</header><!-- .archive-header -->
-
+<div class="page-content">
 
 			<div class="archive-row">
 				<?php archive_listing_loop(); ?>
 		 	</div>
-
+</div>
 		 <?php wp_listings_paging_nav(); ?>
 		 <?php
 			else :

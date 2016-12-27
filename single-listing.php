@@ -554,31 +554,29 @@ if (function_exists('equity')) {
 
 	get_header(); ?>
 
-	<main class="main-content">
+	<main>
 <?php
 
 		// Start the Loop.
 		while ( have_posts() ) : the_post(); ?>
+		<?php
+			if(has_post_thumbnail()) {
+				$thumbnail_url = get_the_post_thumbnail_url();
+				$hero_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(" . $thumbnail_url . ");";
+			} else {
+				$hero_style = '';
+			}
+
+			// echo $hero_style;
+		 ?>
+		<div class="page-header" style="<?php echo $hero_style; ?>">
+			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+		</div>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
-				<small><?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<p id="breadcrumbs">','</p>'); } ?></small>
-				<div class="entry-meta">
-					<?php
-						if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
-					?>
-					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp-listings' ), __( '1 Comment', 'wp-listings' ), __( '% Comments', 'wp-listings' ) ); ?></span>
-					<?php
-						endif;
-
-						edit_post_link( __( 'Edit', 'wp-listings' ), '<span class="edit-link">', '</span>' );
-					?>
-				</div><!-- .entry-meta -->
-			</header><!-- .entry-header -->
-
-
+			<div class="page-content">
 		<?php single_listing_post_content(); ?>
+	</div>
 
 		</article><!-- #post-ID -->
 

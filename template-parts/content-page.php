@@ -6,8 +6,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php $thumbnail_url = get_template_directory_uri() . '/images/default-hero-optimized.jpg'; ?>
-	<header class="page-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(<?php echo $thumbnail_url; ?>)">
+	<?php
+	  if(has_post_thumbnail()) {
+			$thumbnail_url = get_the_post_thumbnail_url();
+	    $hero_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(" . $thumbnail_url . ");";
+	  } else {
+	    $hero_style = '';
+	  }
+
+	  // echo $hero_style;
+	 ?>
+
+	<header class="page-header" style="<?php echo $hero_style; ?>">
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header>
 
@@ -20,7 +30,6 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="page-footer">
@@ -37,4 +46,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+		</div>
 </article><!-- #post-## -->

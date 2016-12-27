@@ -9,22 +9,22 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<?php
+  if(has_post_thumbnail()) {
+    $thumbnail_url = get_the_post_thumbnail_url();
+    $hero_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(" . $thumbnail_url . ");";
+  } else {
+    $hero_style = '';
+  }
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php balassone_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+  // echo $hero_style;
+ ?>
+
+<div class="page-header" style="<?php echo $hero_style; ?>">
+ <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+</div>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('page-content'); ?>>
 
 	<div class="entry-content">
 		<?php

@@ -1,8 +1,17 @@
 <?php get_header(); ?>
 
 <!-- Hero -->
-<?php $thumbnail_url = get_template_directory_uri() . '/images/default-hero-optimized.jpg'; ?>
-<section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(<?php echo $thumbnail_url; ?>)">
+<?php
+  if(has_post_thumbnail()) {
+    $thumbnail_url = get_the_post_thumbnail_url();
+    $hero_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(" . $thumbnail_url . ");";
+  } else {
+    $hero_style = '';
+  }
+
+  // echo $hero_style;
+ ?>
+<section class="hero" style="<?php echo $hero_style; ?>">
   <h2 class="hero-title">Balassone Realty</h1>
   <p class="hero-caption">Serving everyone from first time buyers to serious investors.</p>
   <div class="hero-links">

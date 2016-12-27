@@ -6,6 +6,8 @@
   position: relative;
   text-shadow: 0 0 20px black;
   font-size: 1.2em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('images/default-hero-optimized.jpg');
+
 
   @media (min-width: 28em) {
     text-align: center;
