@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   var body = document.body;
-	var button = document.getElementById("hamburger-main");
+	var button = document.getElementById("primary-menu-toggle");
 
   addEvent(button, 'click', function(event) {
 		event.preventDefault();

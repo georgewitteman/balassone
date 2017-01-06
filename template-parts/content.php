@@ -1,47 +1,27 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Balassone
+ * @package Balassone_Realty
  */
 
 ?>
 
-<?php
-  if(has_post_thumbnail()) {
-    $thumbnail_url = get_the_post_thumbnail_url();
-    $hero_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(" . $thumbnail_url . ");";
-  } else {
-    $hero_style = '';
-  }
-
-  // echo $hero_style;
- ?>
-
-<div class="page-header" style="<?php echo $hero_style; ?>">
- <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-</div>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class('page-content'); ?>>
-
-	<div class="entry-content">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="entry-meta">
+		<?php the_date('m d, Y', '<span class="entry-date">', '</span>'); ?>
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( 'Continue reading %s <span class="meta-nav">&rarr;</span>', array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">', '</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . 'Pages:' ,
-				'after'  => '</div>',
-			) );
+		$categories = get_the_category();
+		if ( ! empty( $categories ) ) {
+		    echo esc_html( $categories[0]->name );
+		}
 		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php balassone_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+		<span class="entry-author"><?php the_author(); ?></span>
+	</div>
+	<div class="entry-content">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php the_content(); ?>
+	</div>
+</article>

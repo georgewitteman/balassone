@@ -8,6 +8,7 @@
 
 add_action('wp_enqueue_scripts', 'enqueue_single_listing_scripts');
 function enqueue_single_listing_scripts() {
+	wp_enqueue_style( 'wp-listings-single' );
 	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_script( 'jquery-validate', array('jquery'), true, true );
 	wp_enqueue_script( 'fitvids', array('jquery'), true, true );
@@ -22,8 +23,7 @@ function single_listing_post_content() {
 	?>
 
 	<div itemscope itemtype="http://schema.org/SingleFamilyResidence" class="entry-content wplistings-single-listing">
-		<div class="listing-row">
-		<div class="listing-left">
+
 		<div class="listing-image-wrap">
 			<?php echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">'. get_the_post_thumbnail( $post->ID, 'listings-full', array('class' => 'single-listing-image', 'itemprop'=>'contentUrl') ) . '</div>';
 			if ( '' != wp_listings_get_status() ) {
@@ -74,8 +74,7 @@ function single_listing_post_content() {
 		echo (get_post_meta($post->ID, '_listing_courtesy', true)) ? '<p class="wp-listings-courtesy">' . get_post_meta($post->ID, '_listing_courtesy', true) . '</p>' : '';
 
 		?>
-	</div> <!-- .listing-left -->
-		<div class="listing-right">
+
 		<div id="listing-tabs" class="listing-data">
 
 			<ul>
@@ -217,8 +216,6 @@ function single_listing_post_content() {
 			<?php } ?>
 
 		</div><!-- #listing-tabs.listing-data -->
-	</div> <!-- .listing-right -->
-</div> <!-- .listing-row -->
 
 		<?php
 			if (get_post_meta( $post->ID, '_listing_map', true) != '') {
@@ -553,30 +550,37 @@ if (function_exists('equity')) {
 	$options = get_option('plugin_wp_listings_settings');
 
 	get_header(); ?>
+	<div class="hero-container">
+	  <header class="hero-text">
+	  </header>
+	</div>
+	<div id="content" class="site-content">
+	  <div id="primary" class="content-area">
 
-	<main>
-<?php
+	<?php
 
 		// Start the Loop.
 		while ( have_posts() ) : the_post(); ?>
-		<?php
-			if(has_post_thumbnail()) {
-				$thumbnail_url = get_the_post_thumbnail_url();
-				$hero_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(" . $thumbnail_url . ");";
-			} else {
-				$hero_style = '';
-			}
-
-			// echo $hero_style;
-		 ?>
-		<div class="page-header" style="<?php echo $hero_style; ?>">
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-		</div>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<div class="page-content">
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
+				<small><?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<p id="breadcrumbs">','</p>'); } ?></small>
+				<div class="entry-meta">
+					<?php
+						if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
+					?>
+					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp-listings' ), __( '1 Comment', 'wp-listings' ), __( '% Comments', 'wp-listings' ) ); ?></span>
+					<?php
+						endif;
+
+						edit_post_link( __( 'Edit', 'wp-listings' ), '<span class="edit-link">', '</span>' );
+					?>
+				</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+
 		<?php single_listing_post_content(); ?>
-	</div>
 
 		</article><!-- #post-ID -->
 
@@ -590,11 +594,14 @@ if (function_exists('equity')) {
 		}
 		endwhile;
 
-	?>
-</main>
-<?php
+	if(isset($options['wp_listings_custom_wrapper']) && isset($options['wp_listings_end_wrapper']) && $options['wp_listings_end_wrapper'] != '') {
+		echo $options['wp_listings_end_wrapper'];
+	} else {
+		echo '</div><!-- #content -->';
+	}
 
 	get_sidebar();
+	echo '</div>';
 	get_footer();
 
 }
