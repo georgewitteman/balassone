@@ -83,3 +83,14 @@ add_action( 'wp_enqueue_scripts', 'balassone_scripts' );
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Search page shows all results
+ */
+function change_wp_search_size($query) {
+    if ( $query->is_search() ) // Make sure it is a search page
+        $query->query_vars['posts_per_page'] = -1;
+
+    return $query; // Return our modified query variables
+}
+add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom function onto the request filter

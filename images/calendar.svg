@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>calendar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5,1 L5,0 L4,0 L4,1 L4,2 L5,2 L5,1 L5,1 Z M3,1 L3,0 L2,0 L2,1 L2,2 L3,2 L3,1 L3,1 Z M11,1 L11,0 L10,0 L10,1 L10,2 L11,2 L11,1 L11,1 Z M9,1 L9,0 L8,0 L8,1 L8,2 L9,2 L9,1 L9,1 Z M7,1 L7,0 L6,0 L6,1 L6,2 L7,2 L7,1 L7,1 Z M4,6 L4,7 L5,7 L5,11 L6,11 L6,6 L5,6 L4,6 L4,6 Z M7,6 L7,7 L8,7 L8,11 L9,11 L9,6 L8,6 L7,6 L7,6 Z M0,2 L0,3 L0,4 L0,13 L1,14 L12,14 L13,13 L13,4 L13,3 L13,2 L12,1 L12,2 L12,3 L11,3 L10,3 L9,3 L8,3 L7,3 L6,3 L5,3 L4,3 L3,3 L2,3 L1,3 L1,2 L1,1 L0,2 L0,2 Z M1,13 L1,4 L2,4 L3,4 L12,4 L12,13 L1,13 L1,13 Z" id="calendar" fill="#575757"></path>
+    </g>
+</svg>
