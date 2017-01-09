@@ -408,7 +408,8 @@ input.search-submit:hover  {
 }
 
 /* ANY ENTRY */
-.entry-text {
+.entry-text,
+.comment-body {
   font-family: $sans-serif;
   font-size: 1em;
   color: #333;

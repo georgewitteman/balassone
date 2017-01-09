@@ -486,87 +486,127 @@ input.search-submit:hover {
   border-bottom: 1px solid #ccc; }
 
 /* ANY ENTRY */
-.entry-text {
+.entry-text,
+.comment-body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   color: #333;
   line-height: 1.618; }
-  .entry-text a {
+  .entry-text a,
+  .comment-body a {
     text-decoration: underline; }
-    .entry-text a:hover {
+    .entry-text a:hover,
+    .comment-body a:hover {
       text-decoration: none; }
-  .entry-text p {
+  .entry-text p,
+  .comment-body p {
     margin-bottom: 1em; }
-  .entry-text blockquote {
+  .entry-text blockquote,
+  .comment-body blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
     margin: 1.5em 10px;
     padding: 0.5em 10px; }
-  .entry-text blockquote p {
+  .entry-text blockquote p,
+  .comment-body blockquote p {
     display: inline; }
-  .entry-text p, .entry-text ol, .entry-text ul, .entry-text table, .entry-text dl, .entry-text pre {
+  .entry-text p, .entry-text ol, .entry-text ul, .entry-text table, .entry-text dl, .entry-text pre,
+  .comment-body p,
+  .comment-body ol,
+  .comment-body ul,
+  .comment-body table,
+  .comment-body dl,
+  .comment-body pre {
     margin-bottom: 1.3em; }
-  .entry-text h1, .entry-text h2, .entry-text h3, .entry-text h4, .entry-text h5, .entry-text h6 {
+  .entry-text h1, .entry-text h2, .entry-text h3, .entry-text h4, .entry-text h5, .entry-text h6,
+  .comment-body h1,
+  .comment-body h2,
+  .comment-body h3,
+  .comment-body h4,
+  .comment-body h5,
+  .comment-body h6 {
     margin: 1.414em 0 0.5em;
     line-height: 1.2;
     font-weight: bold; }
-  .entry-text h1 {
+  .entry-text h1,
+  .comment-body h1 {
     margin-top: 0;
     font-size: 2.074em; }
-  .entry-text h2 {
+  .entry-text h2,
+  .comment-body h2 {
     font-size: 1.728em; }
-  .entry-text h3 {
+  .entry-text h3,
+  .comment-body h3 {
     font-size: 1.44em; }
-  .entry-text h4 {
+  .entry-text h4,
+  .comment-body h4 {
     font-size: 1.2em; }
-  .entry-text small, .entry-text .font_small {
+  .entry-text small, .entry-text .font_small,
+  .comment-body small,
+  .comment-body .font_small {
     font-size: 0.833em; }
-  .entry-text code {
+  .entry-text code,
+  .comment-body code {
     background: #f4f5f6;
     border-radius: .4rem;
     font-size: 86%;
     margin: 0 .2rem;
     padding: .2rem .5rem;
     white-space: nowrap; }
-  .entry-text pre {
+  .entry-text pre,
+  .comment-body pre {
     background: #f4f5f6;
     border-left: 0.3rem solid #9b4dca;
     overflow-y: hidden; }
-  .entry-text pre > code {
+  .entry-text pre > code,
+  .comment-body pre > code {
     border-radius: 0;
     display: block;
     padding: 1rem 1.5rem;
     white-space: pre; }
-  .entry-text ul {
+  .entry-text ul,
+  .comment-body ul {
     list-style-type: disc;
     list-style-position: inside; }
-  .entry-text ol {
+  .entry-text ol,
+  .comment-body ol {
     list-style-type: decimal;
     list-style-position: inside; }
-  .entry-text ul ul, .entry-text ol ul {
+  .entry-text ul ul, .entry-text ol ul,
+  .comment-body ul ul,
+  .comment-body ol ul {
     list-style-type: circle;
     list-style-position: inside;
     margin-left: 1em; }
-  .entry-text ol ol, .entry-text ul ol {
+  .entry-text ol ol, .entry-text ul ol,
+  .comment-body ol ol,
+  .comment-body ul ol {
     list-style-type: lower-latin;
     list-style-position: inside;
     margin-left: 1em; }
-  .entry-text tbody tr:nth-of-type(2n) {
+  .entry-text tbody tr:nth-of-type(2n),
+  .comment-body tbody tr:nth-of-type(2n) {
     background-color: #f0f0f0; }
-  .entry-text th {
+  .entry-text th,
+  .comment-body th {
     background-color: #358407;
     font-weight: bold;
     color: #fff; }
-  .entry-text tbody tr td:nth-of-type(1) {
+  .entry-text tbody tr td:nth-of-type(1),
+  .comment-body tbody tr td:nth-of-type(1) {
     font-weight: bold; }
-  .entry-text sub, .entry-text sup {
+  .entry-text sub, .entry-text sup,
+  .comment-body sub,
+  .comment-body sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline; }
-  .entry-text sup {
+  .entry-text sup,
+  .comment-body sup {
     top: -0.5em; }
-  .entry-text sub {
+  .entry-text sub,
+  .comment-body sub {
     bottom: -0.25em; }
 
 /* SINGLE POST */

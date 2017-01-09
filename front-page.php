@@ -12,10 +12,12 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
 
+    <?php if( function_exists('wp_listings_shortcode') ) : ?>
     <section class="recent-listings">
       <h2 class="section-title">Recent Listings</h2>
       <?php echo wp_listings_shortcode(array( 'limit' => '4', 'columns' => '2' )); ?>
     </section>
+    <?php endif; ?>
 
     <?php
     $loop = new WP_Query( 'posts_per_page=3' );
